@@ -12,8 +12,9 @@ const controls = [
 const buildControls = (props) =>(
 
         <div className='BuildControls'>
+            <p>Burger Price: Rs. {props.price}/-</p>
             {controls.map(ctrl => (
-                <BuildControl key={ctrl.lable} lable={ctrl.lable} addIngredient={()=>props.addFilling(ctrl.type)} removeIngredient={()=>props.removeFilling(ctrl.type)}/>
+                <BuildControl key={ctrl.lable} lable={ctrl.lable} addIngredient={()=>props.addFilling(ctrl.type)} removeIngredient={()=>props.removeFilling(ctrl.type)} disabledInfo={props.disabledInfo[ctrl.type]}/>
             ))}
         </div>
 );
